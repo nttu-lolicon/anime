@@ -1,0 +1,21 @@
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div"></div>
+<script>
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+function drawBasic(){
+var data = new google.visualization.arrayToDataTable([
+['Time', 'Value', {role: "style"}, {role: "annotation"}],
+['8 AM', 1, "red", "A"], ['9 AM', 2, "blue", "B"], ['10 AM', 3, "yellow", "C"],
+['11 AM', 4, "#b87333", "D"], ['12 AM', 5, "#112233", "E"], ['13 AM', 6, "005522", "F"]
+]);
+	var options = {
+title: 'Value Throughout the Day',
+hAxis: { title: 'Time of Day'},
+vAxis: {title: 'Value'}
+};
+var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+}
+</script>
